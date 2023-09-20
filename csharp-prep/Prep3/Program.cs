@@ -8,13 +8,16 @@ class Program
         // string gcInput = Console.ReadLine();
         // int gcMagicNumber = int.Parse(gcInput);
         Random gcRandom = new Random();
-        int gcRNumber = gcRandom.Next(1,101);
+        
         int gcGus = 0 ;
         int gcCount = 0;
         bool gcAgain = true;
 
         while (gcAgain)
         {
+            int gcRNumber = gcRandom.Next(1,101);
+            gcGus = 0;
+            gcCount = 0;
             while( gcRNumber != gcGus)
             {
                 Console.WriteLine("What do you guess?");
