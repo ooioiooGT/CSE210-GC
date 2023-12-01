@@ -5,4 +5,10 @@ class Transcation
     public DateTime Date {get; set;}
     public string Description {get; set;}
 
+    public Transcation(decimal amount, DateTime date, string description)
+    {
+        Amount = amount;
+        Date = date;
+        Description = description;
+    }
 }
