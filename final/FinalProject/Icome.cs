@@ -1,35 +1,33 @@
 using System.Security.Cryptography;
 
-public class Expense : Transcation
+public class Income : Transcation
 {
     public string Category {get; set;}
-    public Expense (DateTime date, string description, decimal amount) 
+    public Income (DateTime date, string description, decimal amount) 
         : base( date, description, amount)
     {
         Category = Category;
     }
-    public static Expense CreateExpense()
+     public static Income CreateIncome()
     {
-        Console.WriteLine("Adding Expense transction");
+        Console.WriteLine("Adding Income transaction");
         DateTime date = DateTime.Now;
         Console.WriteLine("Enter Description: ");
         string description = Console.ReadLine();
         Console.WriteLine("Enter Amount: ");
         decimal amount = decimal.Parse(Console.ReadLine());
-        
-        return new Expense(date,description,amount);
-            
+        return new Income (date, description, amount);
     }
     public override void RecordTransaction()
     {
-        Console.WriteLine($"Expense recorded: {Description} {Amount} {Date}");
+        Console.WriteLine($"Income recorded: {Description} {Amount} {Date}");
     }
-     public static void DisplayExpense(List<Transcation> transcations)
+     public static void DisplayIncome(List<Transcation> transcations)
     {
-        Console.WriteLine("Expense Transaction:");
+        Console.WriteLine("Income Transcation:");
         foreach (Transcation transcation in transcations)
         {
-            if(transcation is Expense)
+            if(transcation is Income)
             {
                 transcation.RecordTransaction();
             }
@@ -37,6 +35,6 @@ public class Expense : Transcation
     }
     public override string ToString()
     {
-        return $"Expense recorded: {Description} {Amount} {Date}";
+        return $"Income recorded: {Description} {Amount} {Date}";
     }
 }

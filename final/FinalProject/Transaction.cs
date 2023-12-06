@@ -1,14 +1,35 @@
-class Transcation 
+using System.ComponentModel;
+using System.Net.Http.Headers;
+using System.Xml.Serialization;
+
+public class Transcation 
 {
-    public int TranscationId { get; set; }
     public decimal Amount {get; set;}
     public DateTime Date {get; set;}
     public string Description {get; set;}
+    // public abstract string ToString();
 
-    public Transcation(decimal amount, DateTime date, string description)
+    
+
+    public Transcation(DateTime date, string description, decimal amount)
     {
-        Amount = amount;
         Date = date;
         Description = description;
+        Amount = amount;
+
+    }   
+    public virtual void RecordTransaction()
+    {
+        Console.WriteLine($"Transaction recorded: {Description}");
+    }
+    public static void  DisplayTransaction(List<Transcation> transcations)
+    {
+        Console.WriteLine("Transcation:");
+        foreach (Transcation transcation in transcations)
+        {
+            transcation.RecordTransaction();
+        }
     }
 }
+   
+    
