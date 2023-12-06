@@ -63,7 +63,7 @@
             "program": "${workspaceFolder}/csharp-prep/Prep4/bin/Debug/net7.0/Prep4.dll",
             "args": [],
             "cwd": "${workspaceFolder}/csharp-prep/Prep4",
-            "console": "integratedTerminal",
+            "console": "internalConsole",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
