@@ -11,7 +11,7 @@ public abstract class Transcation
 
     
 
-    public Transcation(DateTime date, string description, decimal amount)
+    public Transcation( string description, decimal amount,DateTime date)
     {
         Date = date;
         Description = description;

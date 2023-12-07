@@ -10,19 +10,38 @@ public class FileControl
             }
         }
     }
-    public List<Transcation> LoadFile(string filename)
+    public static List<Transcation> LoadFile(string filename)
     {
         List<Transcation> transactions = new List<Transcation>();
         using(StreamReader GCreader = new StreamReader(filename))
         {
-            string line ;
-            line = GCreader.ReadLine();
+            string line;
+            while ((line = GCreader.ReadLine()) != null)
+            {Console.WriteLine(line);
             string [] parts = line.Split(" ");
-            string description = parts[2];
-            decimal amount = decimal.Parse(parts[3]);
-            DateTime date = DateTime.Parse(parts[4]);
-            Transcation transaction = new Transcation (date, description, amount);
-            transactions.Add(transaction);
+            if (parts[0] == "Income:"){
+                string description = parts[1];
+                decimal amount = decimal.Parse(parts[2]);
+                DateTime date = DateTime.Parse(parts[3]);
+                Transcation transcation = new Income(description,amount,date);
+                transactions.Add(transcation);
+            }else{
+                string description = parts[1];
+                decimal amount = decimal.Parse(parts[2]);
+                DateTime date = DateTime.Parse(parts[3]);
+                Transcation transcation = new Expense(description,amount,date);
+                transactions.Add(transcation);
+            }
+            }
+            // Console.WriteLine(line);
+            // string [] parts = line.Split(" ");
+            // Console.WriteLine(parts[2]);
+            // string description = parts[2];
+            // decimal amount = decimal.Parse(parts[3]);
+            // DateTime date = DateTime.Parse(parts[4]);
+
+            // Transcation transaction = new Transcation (date, description, amount);
+            // transactions.Add(transaction);
 
         }
         return transactions;
