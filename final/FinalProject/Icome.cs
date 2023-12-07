@@ -33,7 +33,7 @@ public class Income : Transcation
             }
         }
     }
-    public override string ToString()
+    public override string GCToString()
     {
         return $"Income recorded: {Description} {Amount} {Date}";
     }
