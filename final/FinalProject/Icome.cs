@@ -3,8 +3,8 @@ using System.Security.Cryptography;
 public class Income : Transcation
 {
     public string Category {get; set;}
-    public Income (DateTime date, string description, decimal amount) 
-        : base( date, description, amount)
+    public Income (string description, decimal amount, DateTime date) 
+        : base(  description, amount,date)
     {
         Category = Category;
     }
@@ -16,7 +16,7 @@ public class Income : Transcation
         string description = Console.ReadLine();
         Console.WriteLine("Enter Amount: ");
         decimal amount = decimal.Parse(Console.ReadLine());
-        return new Income (date, description, amount);
+        return new Income (description, amount, date);
     }
     public override void RecordTransaction()
     {
@@ -35,6 +35,6 @@ public class Income : Transcation
     }
     public override string GCToString()
     {
-        return $"Income recorded: {Description} {Amount} {Date}";
+        return $"Income: {Description} {Amount} {Date}";
     }
 }

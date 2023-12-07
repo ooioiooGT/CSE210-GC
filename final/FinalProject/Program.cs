@@ -37,6 +37,7 @@ class Program
                 Console.WriteLine("You are successfully save! ");
                 break;
                 case 6: 
+                transcations = FileControl.LoadFile("transactions");
                 Console.WriteLine("number 4");
                 break;
                 case 7:
