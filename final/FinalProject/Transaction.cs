@@ -2,12 +2,12 @@ using System.ComponentModel;
 using System.Net.Http.Headers;
 using System.Xml.Serialization;
 
-public class Transcation 
+public abstract class Transcation 
 {
     public decimal Amount {get; set;}
     public DateTime Date {get; set;}
     public string Description {get; set;}
-    // public abstract string ToString();
+    public abstract string GCToString();
 
     
 

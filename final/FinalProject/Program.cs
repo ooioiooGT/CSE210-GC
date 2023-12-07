@@ -34,6 +34,7 @@ class Program
                 case 5: 
                 string filename = "transactions";
                 FileControl.SaveFile(filename, transcations);
+                Console.WriteLine("You are successfully save! ");
                 break;
                 case 6: 
                 Console.WriteLine("number 4");
@@ -41,6 +42,9 @@ class Program
                 case 7:
                 Console.WriteLine("number 5");
                 return;
+                default:
+                Console.WriteLine("invaild choice");
+                break;
 
 
             }

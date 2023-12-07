@@ -35,7 +35,7 @@ public class Expense : Transcation
             }
         }
     }
-    public override string ToString()
+    public override string GCToString()
     {
         return $"Expense recorded: {Description} {Amount} {Date}";
     }
